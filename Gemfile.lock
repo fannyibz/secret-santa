@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    abyme (0.6.3)
     actioncable (6.1.4)
       actionpack (= 6.1.4)
       activesupport (= 6.1.4)
@@ -62,6 +63,9 @@ GEM
       zeitwerk (~> 2.3)
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
+    annotate (3.1.1)
+      activerecord (>= 3.2, < 7.0)
+      rake (>= 10.4, < 14.0)
     autoprefixer-rails (10.2.5.0)
       execjs (< 2.8.0)
     bcrypt (3.1.16)
@@ -235,6 +239,8 @@ PLATFORMS
   x86_64-darwin-19
 
 DEPENDENCIES
+  abyme
+  annotate
   autoprefixer-rails (= 10.2.5)
   bootsnap (>= 1.4.4)
   byebug
