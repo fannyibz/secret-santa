@@ -7,11 +7,21 @@ class EventsController < ApplicationController
   def create
     @event = Event.new(event_params)
     @event.user = current_user
-    if @event.save
-      redirect_to root_path
-    else
-      render :new
-    end
+    @event.save ? redirect_to(root_path) : render(:new)
+  end
+
+  def show
+    @event = Event.find(params[:id])
+  end
+
+  private
+
+  def event_params
+    params.require(:event).permit(
+      :name, :user, :max_amount, participants_attributes: [
+        :id, :first_name, :email, :_destroy
+      ]
+    )
   end
 
 end

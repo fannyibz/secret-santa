@@ -8,5 +8,16 @@
   <%= f.label :max_amount, "Max amount to spend for a gift" %>
   <%= f.number_field :max_amount %>
   <%= f.submit %>
+  <%= f.abyme_for(:participants, button_text: 'add participant',) do |abyme| %>
+    <%= abyme.records(order: {created_at: :asc},
+          wrapper_html: { class: "persisted-tasks", data: { controller: "tasks-wrapper" } },
+          fields_html: { class: "persisted-fields", data: { target: "tasks-wrapper.test" } }
+        ) %>
+    <%= abyme.new_records(position: :end, 
+          wrapper_html: { class: "new-tasks", data: { target: 'wrapper-target', controller: 'tasks-wrapper' } },
+          fields_html: {class: "test", data: { target: 'sub-target', controller: 'sub-controller' } }
+        ) %>
+    <%= add_associated_record(content: 'Add partcipant') %>
+  <% end %>
 <% end %>
   
