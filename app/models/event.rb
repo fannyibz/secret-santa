@@ -11,9 +11,10 @@
 #
 class Event < ApplicationRecord
   include Abyme::Model
+
   belongs_to :user
   has_many :participants
-  # accepts_nested_attributes_for :participants, allow_destroy: true
 
   abymize :participants
+      
 end
