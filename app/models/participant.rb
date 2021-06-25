@@ -11,4 +11,10 @@
 #
 class Participant < ApplicationRecord
   belongs_to :event
+
+  after_create :send_event_creation
+
+  def send_event_creation
+    UserMailer.event_creation(self).deliver_now
+  end
 end

@@ -8,7 +8,6 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     @event.user = current_user
     if @event.save
-      UserMailer.you_are_santa(@event)
       redirect_to(root_path)
     else
       render(:new)

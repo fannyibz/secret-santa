@@ -5,12 +5,10 @@ class UserMailer < ApplicationMailer
   #
   #   en.user_mailer.you_are_santa.subject
   #
-  def you_are_santa(event)
-    @event = event
-    @event.participants.each do | participant|
-      @participant = participant
-      mail(to: participant.email, subject: '🎅 You are the santa today 🎅')
-    end
-  end
+  def event_creation(participant)
+    @participant = participant
+    @event = participant.event
 
+    mail(to: @participant.email, subject: '🎅 You are the santa today 🎅')
+  end
 end
