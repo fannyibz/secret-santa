@@ -1,9 +1,5 @@
 class EventsController < ApplicationController
 
-  def new
-    @event = Event.new
-  end
-
   def create
     @event = Event.new(event_params)
     @event.user = current_user
@@ -13,10 +9,6 @@ class EventsController < ApplicationController
     else
       render(:new)
     end
-  end
-
-  def show
-    @event = Event.find(params[:id])
   end
 
   private

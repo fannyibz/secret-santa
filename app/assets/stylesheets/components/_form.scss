@@ -1,0 +1,23 @@
+form.flat-form {
+  max-width: 400px;
+  margin: 0 auto;
+  margin-top: 70px;
+  position: relative;
+}
+
+.flat-form {
+  color: #a61c25;
+  background: #b991ff1f;
+  padding: 20px;
+  box-shadow: 1px 1px 2px #f4f4f4;
+  border-radius: 4px;
+  .form-control {
+    border: 1px solid #a61c25;;
+    box-shadow: 1px 1px 2px #a61c25;;
+  }
+}
+
+.form-abyme {
+  margin: 10px 0px;
+  margin-top: 50px;
+}
