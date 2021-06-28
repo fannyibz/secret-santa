@@ -8,6 +8,7 @@ class UserMailer < ApplicationMailer
   def event_creation(participant)
     @participant = participant
     @event = participant.event
+    @gift_participant_name = Participant.find(@participant.gift_participant).first_name
 
     mail(to: @participant.email, subject: '🎅 You are the santa today 🎅')
   end

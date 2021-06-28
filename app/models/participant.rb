@@ -15,5 +15,4 @@ class Participant < ApplicationRecord
   def send_event_creation
     UserMailer.event_creation(self).deliver_now
   end
-
 end

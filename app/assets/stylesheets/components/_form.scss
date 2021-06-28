@@ -1,4 +1,4 @@
-form.flat-form {
+flat-form {
   max-width: 400px;
   margin: 0 auto;
   margin-top: 70px;
@@ -6,6 +6,10 @@ form.flat-form {
 }
 
 .flat-form {
+  max-width: 400px;
+  margin: 0 auto;
+  margin-top: 70px;
+  position: relative;
   color: #a61c25;
   background: #b991ff1f;
   padding: 20px;
