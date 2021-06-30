@@ -8,10 +8,11 @@ class SecretSantaService
 
   def call
     @participants.each do |participant|
-      # Reject owner id from @ids & Select an id item randomly
       if participant.id ==  @participants.first.id
+        # Assign last partcipant to the the first one
         gift_participant_id = @ids.last
       else
+        # Reject owner id from @ids & Select an id item randomly
         gift_participant_id = @ids.reject { | participant_id | participant_id == participant.id }.sample
       end
       # Add it to column
