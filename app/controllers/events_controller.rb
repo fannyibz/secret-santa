@@ -8,7 +8,8 @@ class EventsController < ApplicationController
       SecretSantaService.new(event: @event).call
       redirect_to(root_path)
     else
-      render(:new)
+      raise
+      redirect_to(root_path)
     end
   end
 
