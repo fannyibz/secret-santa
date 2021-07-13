@@ -59,6 +59,9 @@ group :development, :test do  gem 'pry-byebug'
   gem 'faker'
   gem 'shoulda-matchers', '~> 5.0'
 
+  # TDD
+  gem 'rspec-rails', '~> 5.0.0'
+
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
