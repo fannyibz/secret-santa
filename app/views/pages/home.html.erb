@@ -1,6 +1,15 @@
 <h1>Secret Santa</h1>
-<h3>An easy way to organize your secret santa</h3>
+<h3>An easy way to organize your secret santa!!!!!!!!!</h3>
 
+
+
+<% if alert %>
+    <ul class="alert alert-danger align-items-center">
+      <% alert.each do |message| %>
+          <li><%= "#{message}" %></li>
+      <% end %>
+    </ul>
+<% end %>
 
 <div class="flat-form">
   <%= simple_form_for(@event) do |f| %>

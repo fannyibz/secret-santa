@@ -4,11 +4,14 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     @event.user = current_user
   
-    if @event.save
+    if @event.valid?
+      @event.save
       SecretSantaService.new(event: @event).call
       redirect_to(root_path)
     else
-      render(:new)
+      # flash.now[:messages] = @event.errors.full_messages
+      # raise
+      redirect_to(root_path, alert: @event.errors.full_messages)
     end
   end
 

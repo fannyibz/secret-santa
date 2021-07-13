@@ -16,5 +16,8 @@ class Event < ApplicationRecord
   has_many :participants
 
   abymize :participants
+
+  validates :name, presence: true
+  validates :max_amount, presence: true, numericality: { greater_than_or_equal_to: 4 }
       
 end
