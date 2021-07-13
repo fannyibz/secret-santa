@@ -4,7 +4,7 @@ RSpec.describe Event, type: :model do
   subject = FactoryBot.create :event
 
   context '#initialize' do
-    # it { expect(subject).to be_valid }
+    it { expect(subject).to be_valid }
 
     it "name should be valid" do
       subject.name = nil
@@ -12,7 +12,7 @@ RSpec.describe Event, type: :model do
     end
 
     it "gift amount price should be valid" do
-      subject.max_amount = nil && subject.max_amount >= 4
+      subject.max_amount = 6
       expect(subject).to_not be_valid
     end
 
