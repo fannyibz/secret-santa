@@ -1,7 +1,7 @@
 FactoryBot.define do
   factory :event do
     name {Faker::TvShows::Simpsons.location }
-    max_amount {rand(4..20)}
+    max_amount {7}
     user
   end
 end
