@@ -4,7 +4,6 @@ RSpec.describe Event, type: :model do
   subject = Event.create
   subject2 = FactoryBot.create :event
 
-  p subject 
   context '#initialize' do
 
     it "should return the name of the event" do
