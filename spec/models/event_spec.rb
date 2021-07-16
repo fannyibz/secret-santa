@@ -3,7 +3,6 @@ require 'rails_helper'
 RSpec.describe Event, type: :model do
   subject = Event.create
   subject2 = FactoryBot.create :event
-  participant = Participant.new
 
   context '#initialize' do
     it "is not valid without a name" do
@@ -24,6 +23,7 @@ RSpec.describe Event, type: :model do
   # Validations
   context 'ActiveModel validations' do
     it { should validate_presence_of(:name) }
+    it { should accept_nested_attributes_for(:participants) }
 
     it do
       should validate_numericality_of(:max_amount).
