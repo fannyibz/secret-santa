@@ -43,6 +43,12 @@ group :development, :test do  gem 'pry-byebug'
   gem 'annotate'
   gem 'letter_opener'
 
+  # TDD
+  gem 'rspec-rails', '~> 5.0.0'
+  gem "factory_bot_rails"
+  gem 'faker'
+  gem 'shoulda-matchers', '~> 5.0'
+
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
 end
