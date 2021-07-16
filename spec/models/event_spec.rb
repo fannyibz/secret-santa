@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe Event, type: :model do
   subject = Event.create
   subject2 = FactoryBot.create :event
-  p participant = Participant.new
+  participant = Participant.new
 
   context '#initialize' do
     it "is not valid without a name" do
