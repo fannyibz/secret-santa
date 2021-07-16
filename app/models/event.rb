@@ -19,5 +19,8 @@ class Event < ApplicationRecord
 
   validates :name, presence: true
   validates :max_amount, presence: true, numericality: { greater_than_or_equal_to: 4 }
-      
+
+  def public_name
+    "#{max_amount} // #{name} // #{participants.count}"
+  end
 end

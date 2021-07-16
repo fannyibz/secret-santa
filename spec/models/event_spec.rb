@@ -32,10 +32,9 @@ RSpec.describe Event, type: :model do
   end
 
   #Associations
-  describe "ActiveRecord associations" do
+  context "ActiveRecord associations" do
     it { should have_many(:participants) }
     it { should belong_to(:user) }
-  #    it { expect(participant).to belong_to(:event) }
   end
 
   describe Participant do
