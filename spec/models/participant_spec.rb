@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe Participant, type: :model do
-  participant = FactoryBot.create :participant
-  p participant
+  participant = FactoryBot.create(:participant) 
+  p participant.event.participants
   # Validations
   context 'ActiveModel validations' do
     it { should validate_presence_of(:first_name) }

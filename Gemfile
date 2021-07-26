@@ -48,6 +48,8 @@ group :development, :test do  gem 'pry-byebug'
   gem 'shoulda-matchers', '~> 5.0'
   #  automatically & intelligently launch specs when files are modified
   gem 'guard-rspec', require: false
+  # cleaning your database
+  gem 'database_cleaner-active_record'
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

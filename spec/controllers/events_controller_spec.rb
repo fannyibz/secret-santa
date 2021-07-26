@@ -1,5 +1,35 @@
 require "rails_helper"
-# RSpec.describe EventsController, type: :controller do
+
+RSpec.describe EventsController, type: :controller do
+
+  describe 'Event #create' do
+
+    context 'invalid params' do
+      before(:each) do
+        event_test = FactoryBot.create :event
+      end
+
+      it 'should return a 200' do
+        expect(response).to have_http_status(200)
+      end
+
+      # it 'should contain participants' do
+      #   p response
+      #   json = JSON.parse(response.body)
+      #   # expect(response).to include ()
+      # end
+
+      it "shoul persit event" do
+        p Event.all 
+        expect(Event.count).to eq(1)
+      end
+
+    end
+  
+  end
+
+end
+
 
 #   before do
 #     @user = FactoryBot.create :event
@@ -32,5 +62,4 @@ require "rails_helper"
 #     end
 #   end
   
-# end
 # end
