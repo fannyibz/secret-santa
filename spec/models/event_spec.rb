@@ -5,19 +5,16 @@ RSpec.describe Event, type: :model do
   subject2 = FactoryBot.create :event
 
   context '#initialize' do
-    it "is not valid without a name" do
-      subject.name = nil
-      expect(subject).to_not be_valid
-    end
 
-    it "is not valid without a gift price" do
-      subject.max_amount = nil
-      expect(subject).to_not be_valid
+    it "should return the name of the event" do
+      event = Event.new({ name: "Best Christmas" })
+      expect(event.name).to eq("Best Christmas")
     end
-  
-    it "gift amount price should be valid" do
+    
+    it "gift amount price should be greater or equal than 4" do
       expect(subject2.max_amount).to be >= (4)
     end
+
   end
 
   # Validations
