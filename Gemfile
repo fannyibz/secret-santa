@@ -48,6 +48,8 @@ group :development, :test do  gem 'pry-byebug'
   gem 'shoulda-matchers', '~> 5.0'
   #  automatically & intelligently launch specs when files are modified
   gem 'guard-rspec', require: false
+  # brings back assigns to your controller tests as well as assert_template
+  gem 'rails-controller-testing'
   # cleaning your database
   gem 'database_cleaner-active_record'
 
