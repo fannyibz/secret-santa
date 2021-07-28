@@ -42,6 +42,16 @@ group :development, :test do  gem 'pry-byebug'
   gem 'dotenv-rails'
   gem 'annotate'
   gem 'letter_opener'
+  gem 'rspec-rails', '~> 5.0.0'
+  gem "factory_bot_rails"
+  gem 'faker'
+  gem 'shoulda-matchers', '~> 5.0'
+  #  automatically & intelligently launch specs when files are modified
+  gem 'guard-rspec', require: false
+  # brings back assigns to your controller tests as well as assert_template
+  gem 'rails-controller-testing'
+  # cleaning your database
+  gem 'database_cleaner-active_record'
 
   # TDD
   gem 'rspec-rails', '~> 5.0.0'
