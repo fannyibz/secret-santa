@@ -2,18 +2,21 @@ require 'rails_helper'
 
 RSpec.describe PagesController, type: :controller do
 
-  before do
-    @user = FactoryBot.create :event
-  end
+  # before do
+  #   @user = FactoryBot.create :event
+  # end
   
   
   describe 'GET #home' do
-    before(:example) { get users_path }  # get(:index)
-    it "is a success" do
-      expect(response).to have_http_status(:ok)
+    before(:example) { get :home }
+
+    it "should render a successful response" do
+      expect(response).to have_http_status(200)
     end
-    it "renders 'index' template" do
-      expect(response).to render_template('index')
+
+    it "should render 'home' template" do
+      expect(response).to render_template('home')
     end
   end
+
 end

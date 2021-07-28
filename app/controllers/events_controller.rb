@@ -1,16 +1,16 @@
 class EventsController < ApplicationController
 
   def create
+    p event_params
     @event = Event.new(event_params)
     @event.user = current_user
-  
-    if @event.valid?
-      @event.save
+    
+    if @event.save
       SecretSantaService.new(event: @event).call
       redirect_to(root_path)
     else
       # flash.now[:messages] = @event.errors.full_messages
-      # raise
+      @event.errors.full_messages
       redirect_to(root_path, alert: @event.errors.full_messages)
     end
   end
