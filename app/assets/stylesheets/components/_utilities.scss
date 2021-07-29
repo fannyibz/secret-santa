@@ -10,3 +10,10 @@ h3 {
   text-align: center;
   margin-bottom: 30px;
 }
+
+a:hover,
+a:visited,
+a:link,
+a:active {
+  text-decoration: none;
+}

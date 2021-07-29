@@ -10,12 +10,12 @@
 #  updated_at :datetime         not null
 #
 class Event < ApplicationRecord
-  include Abyme::Model
+  # include Abyme::Model
 
   belongs_to :user
   has_many :participants
 
-  abymize :participants
+  accepts_nested_attributes_for :participants, allow_destroy: true, reject_if: proc { |attr| attr['email'].blank? }
 
   validates :name, presence: true
   validates :max_amount, presence: true, numericality: { greater_than_or_equal_to: 4 }

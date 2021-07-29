@@ -1,8 +1,6 @@
 <h1>Secret Santa</h1>
 <h3>An easy way to organize your secret santa!!!!!!!!!</h3>
 
-
-
 <% if alert %>
     <ul class="alert alert-danger align-items-center">
       <% alert.each do |message| %>
@@ -11,17 +9,10 @@
     </ul>
 <% end %>
 
-<div class="flat-form">
-  <%= simple_form_for(@event) do |f| %>
-    <div class="form-group">
-      <%= f.label :name, "Event name" %>
-      <%= f.text_field :name, class:"form-control" %>
-    </div>
-    <div class="form-group">
-      <%= f.label :max_amount, "Max amount to spend for a gift" %>
-      <%= f.number_field :max_amount, class:"form-control" %>
-    </div>
+<%= render 'form/secret_santa_form' %>
 
+<%
+=begin  %>
     <div class="form-abyme">
       <%= f.abyme_for(:participants, button_text: 'add participant',) do |abyme| %>
         <%= abyme.records(order: {created_at: :asc},
@@ -35,7 +26,7 @@
         <%= add_associated_record(content: '+ Add participant', html: { class: 'btn btn-participant' }) %>
       <% end %>
     </div>
-    <%= f.submit class: "btn btn-confirm"%>
-  <% end %>
-</div>
-  
+
+
+<%
+=end  %>
