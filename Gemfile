@@ -52,6 +52,8 @@ group :development, :test do  gem 'pry-byebug'
   gem 'rails-controller-testing'
   # cleaning your database
   gem 'database_cleaner-active_record'
+  # code coverage analysis tool
+  gem 'simplecov', require: false
 
   # TDD
   gem 'rspec-rails', '~> 5.0.0'
