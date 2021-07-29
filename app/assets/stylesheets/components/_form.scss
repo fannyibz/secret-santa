@@ -16,12 +16,32 @@ flat-form {
   box-shadow: 1px 1px 2px #f4f4f4;
   border-radius: 4px;
   .form-control {
-    border: 1px solid #a61c25;;
-    box-shadow: 1px 1px 2px #a61c25;;
+    border: 1px solid #a61c25;
+    box-shadow: 1px 1px 2px #a61c25;
+    margin-bottom: 10px;
+  }
+  label {
+    margin-bottom: 4px;
   }
 }
 
-.form-abyme {
-  margin: 10px 0px;
-  margin-top: 50px;
+.nested-fields {
+  margin-bottom: 40px;
+  .form-group {
+    text-align: right;
+  }
 }
+
+.remove-participant {
+  color: #a61c25;
+}
+
+.remove-participant:hover {
+  font-weight: 600;
+  color: #a61c25;
+}
+
+// .form-abyme {
+//   margin: 10px 0px;
+//   margin-top: 50px;
+// }

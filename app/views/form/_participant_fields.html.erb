@@ -1,0 +1,11 @@
+<div class='nested-fields'>
+  <div class='form-group'>
+    <%= link_to "", "#", data: { action: "click->nested-form#remove_association" }, 
+                          class:"far fa-times-circle remove-participant",
+                          style:"top: 30px; right: 8px;" %>
+    <%= form.text_field :first_name, placeholder: 'Name', class: 'form-control' %>
+    <%= form.text_field :email, placeholder: 'Email', class: 'form-control' %>
+    <%= form.hidden_field :_destroy %>
+   
+  </div>
+</div>
