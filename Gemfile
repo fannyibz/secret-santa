@@ -52,12 +52,22 @@ group :development, :test do  gem 'pry-byebug'
   gem 'rails-controller-testing'
   # cleaning your database
   gem 'database_cleaner-active_record'
+  # code coverage analysis tool
+  gem 'simplecov', require: false
 
   # TDD
   gem 'rspec-rails', '~> 5.0.0'
   gem "factory_bot_rails"
   gem 'faker'
   gem 'shoulda-matchers', '~> 5.0'
+
+  # TDD
+  gem 'rspec-rails', '~> 5.0.0'
+  gem "factory_bot_rails"
+  gem 'faker'
+  gem 'shoulda-matchers', '~> 5.0'
+  #  automatically & intelligently launch specs when files are modified
+  gem 'guard-rspec', require: false
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
