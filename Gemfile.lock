@@ -276,7 +276,6 @@ GEM
       actionpack (>= 4.0)
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
-    sweetalert2-rails (0.1.1)
     thor (1.1.0)
     tilt (2.0.10)
     turbolinks (5.2.1)
@@ -342,7 +341,6 @@ DEPENDENCIES
   simple_form
   simplecov
   spring
-  sweetalert2-rails
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 4.1.0)

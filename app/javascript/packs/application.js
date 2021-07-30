@@ -6,6 +6,7 @@
 import Rails from "@rails/ujs";
 import Turbolinks from "turbolinks";
 import * as ActiveStorage from "@rails/activestorage";
+import swal from "sweetalert";
 import "channels";
 
 Rails.start();
@@ -18,14 +19,17 @@ ActiveStorage.start();
 // ----------------------------------------------------
 
 // External imports
+import "controllers";
 import "bootstrap";
 
 // Internal imports, e.g:
-// import { initSelect2 } from '../components/init_select2';
+import { initSweetalert } from "../plugins/init_sweetalert";
 
 document.addEventListener("turbolinks:load", () => {
   // Call your functions here, e.g:
-  // initSelect2();
+  initSweetalert("#sweet-alert", {
+    title: "A nice alert",
+    text: "This is a great alert, isn't it?",
+    icon: "success",
+  });
 });
-
-import "controllers";

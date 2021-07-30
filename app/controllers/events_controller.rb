@@ -7,11 +7,24 @@ class EventsController < ApplicationController
     
     if @event.save
       SecretSantaService.new(event: @event).call
-      redirect_to(root_path)
+      respond_to do |format|
+        format.html { redirect_to(root_path) }
+        format.js {
+          render  :template => "events/create.js.erb",
+                  :layout => false
+      }
+      end
     else
       # flash.now[:messages] = @event.errors.full_messages
-      @event.errors.full_messages
-      redirect_to(root_path, alert: @event.errors.full_messages)
+      respond_to do |format|
+        format.html { redirect_to(root_path, alert: @event.errors.full_messages)}
+        format.js {
+          render  :template => "events/create_fail.js.erb",
+                  :layout => false
+        }
+        
+      end
+      
     end
   end
 

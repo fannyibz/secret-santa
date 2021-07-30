@@ -56,7 +56,7 @@ group :development, :test do  gem 'pry-byebug'
   gem 'simplecov', require: false
 
   # replacement for JavaScript's popup boxes
-  gem 'sweetalert2-rails'
+ 
 
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
